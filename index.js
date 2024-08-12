@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded',() => {
         links.forEach(a => a.style.textTransform = 'lowercase')
 
         header.style.position = 'static';
-        header.style.backgroundImage =  'url("../images/mobile/image-hero.jpg")';
+        header.style.backgroundImage =  "url('../images/mobile/image-hero.jpg')";
         image1.style.display = 'block';
         image2.style.display = 'none'
     }
