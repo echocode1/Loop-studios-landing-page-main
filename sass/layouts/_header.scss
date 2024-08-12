@@ -1,0 +1,106 @@
+.menu-open{
+    background-color:inherit ;
+    border: none;
+    cursor: pointer;
+}
+.header{
+    background-image: url("../images/mobile/image-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3rem 2rem;
+    color: $light;
+
+    #menu-close{ 
+        @extend .menu-open;
+        display: none;
+        cursor: pointer;
+    }
+    #logo{
+        display: flex;
+        justify-content: space-between;
+        height: 1.3rem;
+        #hamburger{
+            height: 0.9rem;
+            width: 1.5rem;
+            align-self: center;
+        }
+    }
+    .nav-bar{
+        display: none;
+        margin-top: 50%;
+    }
+    & li{ 
+        list-style: none;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-bottom: 10px;
+        cursor: pointer;
+    }
+    & a{ 
+        text-decoration: none;
+        color: inherit;
+    }
+    & #header__base{
+        border-top: 2px solid $text;
+        border-bottom: 2px solid $text;
+        border-left: 2px solid $light;
+        border-right: 2px solid $light;
+        padding: 1.5rem;
+        font-size: 2.5rem;
+        margin: 25vh 0;
+    }
+}
+/*  common header styles  */
+.heading{
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: $dark;
+}
+@media (min-width:576px){
+    .header{
+        background-image: url("../images/desktop/image-hero.jpg");
+        padding: 3rem 4rem;
+        .menu-open{display: none;}
+        .header__top, .nav-bar ul{@include flex__style}
+        .nav-bar{
+            display: flex;
+            margin-top: auto;
+        }
+        & li{ 
+            list-style: none;
+            margin-bottom: auto;
+            margin-left: 1rem;
+        }
+        & li::after {@include underline}
+        & li:hover::after {@include hover-visibility;}
+        & #header__base{
+            width: 50%;
+            font-size: 2.5rem;
+            margin: 10vh 0 5vh 0;
+        }
+    }
+}
+@media (min-width: 820px){
+    .header{
+        padding: 4rem 10vw;
+        & li{ margin-left: 1.5rem;}
+        & #header__base{
+            width: 45%;
+            margin: vh 0 2rem 0;
+        }
+    }
+}
+
+@media (min-width:1100px){
+    .header{
+        padding: 4rem 11vw;
+        & li{ font-size: 16px;}
+        &__top,  #logo-main{height: 2rem;}
+        & #header__base{
+            font-size: 3.5rem;
+            margin: 9vh 0 2rem 0;
+            padding: 3rem;
+        }
+    }
+}

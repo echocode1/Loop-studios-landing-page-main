@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&display=swap');
+
+$light:hsl(0, 0%, 100%);
+$dark:hsl(0, 0%, 0%);
+$text: hsl(0, 0%, 55%);
+$headers:hsl(0, 0%, 41%);
+
+@mixin flex__style{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin underline{
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+@mixin hover-visibility{transform: scaleX(1);}
+
+@mixin articles{
+    height: 110px;
+    padding: 1rem; 
+    display: flex;
+    align-items:flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 1.5rem;
+}
+@mixin article__hover{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $light;
+    opacity: 70%;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.3s ease;
+    color: $light;
+}
+@mixin article__hover-visibility{transform: scaleX(1);}
